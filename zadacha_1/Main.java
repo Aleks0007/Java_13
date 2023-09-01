@@ -16,7 +16,9 @@ public class Main {
             }
         } catch (InvalidNumberException e) {
             System.out.println(e.getMessage());
-        } // Не закрываем scanner, чтобы избежать закрытия System.in
+        } finally {
+            scanner.close();
+        }
     }
 
     static class InvalidNumberException extends Exception {
